@@ -1,10 +1,10 @@
-import { FrontMapPage } from './app.po';
+import { CliStablePage } from './app.po';
 
-describe('front-map App', () => {
-  let page: FrontMapPage;
+describe('cli-stable App', () => {
+  let page: CliStablePage;
 
   beforeEach(() => {
-    page = new FrontMapPage();
+    page = new CliStablePage();
   });
 
   it('should display message saying app works', () => {
