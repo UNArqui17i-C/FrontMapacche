@@ -1,8 +1,29 @@
 <p>
   comments works!
-  champions league
+
 </p>
 
-<p>
-  {{testio}}
-</p>
+
+
+
+<li *ngFor="let comment of comments">
+  {{ comment.title }}
+</li>
+
+
+<!-- <li *ngFor="let comment of comments">
+  {{ comment | json }}
+</li> -->
+
+<!--<li *ngFor="let hero of comments">
+  {{ hero.game }}
+</li>-->
+
+
+<!--<li *ngFor="let hero of comments">
+  {{ hero.game }}
+</li>-->
+
+
+<!--<pre>{{comments | json}}</pre>-->
+
