@@ -20,10 +20,33 @@
 </nav>
 <hr>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <sebm-google-map
+        [latitude]="latitud"
+        [longitude]="longitud"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+        [zoomControl]="false"
+        (mapClick)="mapCliqueado($event)">
+        <sebm-google-map-marker
+          *ngFor="let m of markers; let i = index"
+          (markerClick)="marcadorCliqueado(m,i)"
+          [latitude]="m.latitud"
+          [longitude]="m.longitud"
+          [markerDraggable]="m.arrastrable"
+          (dragEnd)="posicionFinalMarcador(m, $event)">
 
-<h1>{{ title }}</h1>
+          <sebm-google-map-info-window>
+            <strong>{{m.nombre}}</strong>
+          </sebm-google-map-info-window>
+        </sebm-google-map-marker>
+
+      </sebm-google-map>
+    </div>
+  </div>
+</div>
 
 
-<sebm-google-map [latitude]="lat" [longitude]="lng">
-  <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
-</sebm-google-map>
+
