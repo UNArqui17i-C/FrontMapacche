@@ -39,7 +39,43 @@ export class LugaresComponent {
     constructor () {
     }
 
-}
+    marcadorCliqueado(marcador:marker, index:number) {
+        console.log("Marcador Cliqueado: " + marcador.nombre+ " en el index: " +index);
+    }
+
+    mapCliqueado($event:any) {
+      console.log ("Mapa Cliqueado");
+
+      var nuevoMarcador = {
+        nombre:'Sin titulo',
+        latitud: $event.coords.lat,
+        longitud: $event.coords.lng,
+        arrastrable: false
+
+    }
+      this.markers.push(nuevoMarcador);
+    }
+
+    posicionFinalMarcador(marcador:any, $event:any) {
+      console.log ("Posicion final: ", marcador, $event);
+
+      var actualizarmarcador = {
+          nombre:marcador.nombre,
+          latitud: parseFloat(marcador.lat),
+          longitud: parseFloat(marcador.lng),
+          arrastrable: false
+      }
+
+      var nuevaLati = $event.coords.lat;
+      var nuevaLongi = $event.coords.lng;
+
+      }
+
+
+
+} //koko
+
+//tipo de marcador
 
   interface marker {
     nombre?: string;
